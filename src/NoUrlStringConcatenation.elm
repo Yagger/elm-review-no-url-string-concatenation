@@ -21,13 +21,13 @@ import Review.Rule exposing (Error, Rule)
 ## Fail
 
     a =
-        `baseUrl ++ "/items/" ++ itemId`
+        baseUrl ++ "/items/" ++ itemId
 
 
 ## Success
 
     a =
-        `Url.Builder.crossOrigin baseUrl [ "items", "itemId" ]`
+        Url.Builder.crossOrigin baseUrl [ "items", "itemId" ]
 
 
 ## When (not) to enable this rule
@@ -41,7 +41,7 @@ This rule is not useful when there are plenty of expressions concatenating non-u
 You can try this rule out by running the following command:
 
 ```bash
-elm-review --template undefined/example --rules NoUrlStringConcatenation
+elm-review --template Yagger/elm-review-no-url-string-concatenation/example --rules NoUrlStringConcatenation
 ```
 
 -}
@@ -72,7 +72,7 @@ errorCondition node rootNode =
             if String.startsWith "/" s || String.endsWith "/" s then
                 [ Review.Rule.error
                     { message = "This looks like you are building URL by concatenating strings. Use `absolute`, `relative` or `crossOrigin` functions from Url.Builder module instead."
-                    , details = [ "Most of the time a combination of ++ and string that starts or ends with a forward slash denote to building a URL. If you are building non-url string that contains forward slash, you can still use Url.Builder.relative or String.join." ]
+                    , details = [ "Most of the time a combination of ++ and string that starts or ends with a forward slash denote to building a URL. If you are building non-url string that contains forward slash, you can use String.join." ]
                     }
                     (Elm.Syntax.Node.range rootNode)
                 ]
