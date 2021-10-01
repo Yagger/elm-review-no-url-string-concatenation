@@ -22,13 +22,14 @@ a = "/" ++ itemPath ++ "/" ++ itemId ++ "/"
         , test "should report an error for expression that concatenates strings that starts or ends with a forward slash" <|
             \() ->
                 """module A exposing (..)
-a = baseUrl ++ "/intros/" ++ introId"""
+a = baseUrl ++ "/items/" ++ itemId"""
                     |> Review.Test.run rule
-                    |> Review.Test.expectErrors [ expectedError "\"/intros/\" ++ introId" ]
-        , test "should not report an error for expression that concatenates strings without forward slash" <|
+                    |> Review.Test.expectErrors [ expectedError "\"/items/\" ++ itemId" ]
+        , test "should not report an error for expression that concatenates strings that do not start or end with a forward slash" <|
             \() ->
                 """module A exposing (..)
-a = introName ++ ":" ++ introId"""
+a = aaa ++ ":" ++ bbb ++ "ddd/ccc"
+"""
                     |> Review.Test.run rule
                     |> Review.Test.expectErrors []
         ]

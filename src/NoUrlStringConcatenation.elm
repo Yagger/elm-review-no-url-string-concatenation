@@ -21,13 +21,13 @@ import Review.Rule exposing (Error, Rule)
 ## Fail
 
     a =
-        `baseUrl ++ "/intros/" ++ introId`
+        `baseUrl ++ "/items/" ++ itemId`
 
 
 ## Success
 
     a =
-        `Url.Builder.crossOrigin baseUrl [ "intros", "introId" ]`
+        `Url.Builder.crossOrigin baseUrl [ "items", "itemId" ]`
 
 
 ## When (not) to enable this rule
