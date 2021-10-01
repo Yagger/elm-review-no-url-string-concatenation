@@ -5,7 +5,7 @@ Provides [`elm-review`](https://package.elm-lang.org/packages/jfmengels/elm-revi
 
 ## Provided rules
 
-- [`NoUrlStringConcatenation`](https://package.elm-lang.org/packages/Yagger/elm-review-no-url-string-concatenation/1.0.0/NoUrlStringConcatenation)
+- [`NoUrlStringConcatenation`](https://package.elm-lang.org/packages/Yagger/elm-review-no-url-string-concatenation/1.0.1/NoUrlStringConcatenation/)
 
 
 ## Configuration

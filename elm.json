@@ -3,7 +3,7 @@
     "name": "Yagger/elm-review-no-url-string-concatenation",
     "summary": "An elm-review rule that ensures URLs are not built using string concatenation",
     "license": "BSD-3-Clause",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "exposed-modules": [
         "NoUrlStringConcatenation"
     ],

@@ -39,6 +39,6 @@ expectedError : String -> Review.Test.ExpectedError
 expectedError under =
     Review.Test.error
         { message = "This looks like you are building URL by concatenating strings. Use `absolute`, `relative` or `crossOrigin` functions from Url.Builder module instead."
-        , details = [ "Most of the time a combination of ++ and string with forward slash denote to building a URL. If you are building non-url string that contains forward slash, then please use String.join." ]
+        , details = [ "Most of the time a combination of ++ and string that starts or ends with a forward slash denote to building a URL. If you are building non-url string that contains forward slash, you can still use Url.Builder.relative or String.join." ]
         , under = under
         }
